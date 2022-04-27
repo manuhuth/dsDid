@@ -1,0 +1,20 @@
+AggregateMethods:
+   computeMatrixCrossproductDS,
+   computeInfTreatDifferenceDS,
+   buildHelperDS,
+   multiplierBootstrapDS
+AssignMethods:
+   genPropDS,
+   genDfSubsetDS,
+   multiplyMatrixVectorDS,
+   computeOddsDS,
+   computeATTindividualDS,
+   addColumnOnesDS,
+   multiplyMatrixMatrixDS,
+   sendToServerDS,
+   insertNumberToVectorDS,
+   computeMeanVectorDS,
+   generateNotYetTreatedDS,
+   createEmptyIdMatrixDS,
+   AppendInfluenceDS,
+   clusterInfluenceFunctionDS
