@@ -4,7 +4,7 @@
 \alias{AppendInfluenceDS}
 \title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
 \usage{
-AppendInfluenceDS(df, influences, id_period_vector, column)
+AppendInfluenceDS(seed, df, influences, id_period_vector, column)
 }
 \arguments{
 \item{form}{formula in text format}

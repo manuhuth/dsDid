@@ -8,7 +8,15 @@
 #' @return estimate/prediction using regression coefficients
 #' @export
 clusterInfluenceFunctionDS <- function(df, influence_matrix, clustervars, idname){
-  #matrix comes as string, vector as numbers
+  #############################################################
+  # MODULE 1: CAPTURE THE nfilter SETTINGS
+  thr <- listDisclosureSettingsDS()
+  nfilter.tab <- as.numeric(thr$nfilter.tab)
+  #nfilter.glm <- as.numeric(thr$nfilter.glm)
+  #nfilter.subset <- as.numeric(thr$nfilter.subset)
+  #nfilter.string <- as.numeric(thr$nfilter.string)
+  #############################################################
+
   if (is.character(df)){
     df <- as.matrix(eval(parse(text=df), envir = parent.frame()))
   }
@@ -17,9 +25,15 @@ clusterInfluenceFunctionDS <- function(df, influence_matrix, clustervars, idname
     influence_matrix <- as.matrix(eval(parse(text=influence_matrix), envir = parent.frame()))
   }
 
+  if (nrow(df) < 5) {
+    stop("FAILED: Nvalid less than nfilter.tab")
+  }
+
   number_of_clusters <- length(unique(df[, clustervars]))
   cluster <- unlist(unique(df[, c(idname, clustervars)])[,2])
   cluster_n <- aggregate(cluster, by=list(cluster), length)[,2]
+
+
   cluster_means <- rowsum(influence_matrix, unlist(cluster), reorder=TRUE) / cluster_n
 
   return(cluster_means)

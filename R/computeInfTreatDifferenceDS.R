@@ -8,8 +8,6 @@
 #' @return estimate/prediction using regression coefficients
 #' @export
 computeInfTreatDifferenceDS <- function(inf_1, inf_2){
-  #matrix comes as string, vector as numbers
-
   inf_1 <- eval(parse(text=inf_1), envir = parent.frame())
   inf_2 <- eval(parse(text=inf_2), envir = parent.frame())
 
