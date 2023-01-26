@@ -2,22 +2,24 @@
 % Please edit documentation in R/AppendInfluenceDS.R
 \name{AppendInfluenceDS}
 \alias{AppendInfluenceDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{AppendInfluenceDS}
 \usage{
 AppendInfluenceDS(seed, df, influences, id_period_vector, column)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{seed}{A seed used for random sampling}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{df}{A string representing a dataframe}
 
-\item{object}{dataframe object name where dependent var values are located}
+\item{influences}{A vector of influence values}
 
-\item{invlog}{use inverse of logit}
+\item{id_period_vector}{A vector of row names or a string representing a vector of row names}
+
+\item{column}{A character string representing the name of the column to append the influence values to}
 }
 \value{
-estimate/prediction using regression coefficients
+A dataframe with the column of influence values added
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function appends a column of influence values to a dataframe and returns the new dataframe.
 }

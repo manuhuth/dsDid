@@ -2,22 +2,22 @@
 % Please edit documentation in R/genDfSubsetDS.R
 \name{genDfSubsetDS}
 \alias{genDfSubsetDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{genDfSubsetDS}
 \usage{
 genDfSubsetDS(df, name_variable, value, include_zero = TRUE)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{df}{A dataframe or a string representing a dataframe}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{name_variable}{A character string representing the column in the dataframe to subset on}
 
-\item{object}{dataframe object name where dependent var values are located}
+\item{value}{A value or a string representing the value to subset on in the specified column}
 
-\item{invlog}{use inverse of logit}
+\item{include_zero}{A boolean value indicating whether or not to include rows with a value of zero in the subset}
 }
 \value{
-estimate/prediction using regression coefficients
+A subset of the dataframe with rows that match the specified variable and value
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function generates a subset of a dataframe based on a specified variable and value.
 }

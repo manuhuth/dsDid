@@ -1,14 +1,11 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param form formula in text format
-#' @param coefficients coefficients of dependent variables in form
-#' @param object dataframe object name where dependent var values are located
-#' @param invlog use inverse of logit
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title addColumnOnesDS
+#' @description The function adds a column of ones to a dataframe and returns the new dataframe.
+#' @param X A string representing a dataframe
+#' @param columns A character vector of column names for the new dataframe
+#' @return A dataframe with a column of ones added
 #' @export
 addColumnOnesDS <- function(X, columns){
-  #matrix comes as string, vector as numbers
+
   X <- as.data.frame(eval(parse(text=X), envir = parent.frame()))
 
   matrix_ones <- cbind(rep(1, nrow(X)), X)

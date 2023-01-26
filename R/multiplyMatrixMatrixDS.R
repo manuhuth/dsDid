@@ -1,11 +1,12 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param form formula in text format
-#' @param coefficients coefficients of dependent variables in form
-#' @param object dataframe object name where dependent var values are located
-#' @param invlog use inverse of logit
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title multiplyMatrixMatrixDS
+#' @description The function multiplies two matrices and returns the product matrix. At least one of the matrices must be from the server-side.
+#' @param matrix1 A matrix or a string representing a matrix
+#' @param matrix2 A matrix or a string representing a matrix
+#' @param nrow1 The number of rows for the first matrix, used only if the first matrix is not a string
+#' @param ncol1 The number of columns for the first matrix, used only if the first matrix is not a string
+#' @param nrow2 The number of rows for the second matrix, used only if the second matrix is not a string
+#' @param ncol2 The number of columns for the second matrix, used only if the second matrix is not a string
+#' @return A matrix representing the product of the two input matrices
 #' @export
 multiplyMatrixMatrixDS <- function(matrix1, matrix2, nrow1=NULL, ncol1=NULL,
                                 nrow2=NULL, ncol2=NULL){

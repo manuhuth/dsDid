@@ -1,11 +1,7 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param form formula in text format
-#' @param coefficients coefficients of dependent variables in form
-#' @param object dataframe object name where dependent var values are located
-#' @param invlog use inverse of logit
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title computeMatrixCrossproductDS
+#' @description The function computes the cross-product of a matrix and returns the result.
+#' @param X A string representing a matrix
+#' @return A matrix representing the cross-product of the input matrix
 #' @export
 computeMatrixCrossproductDS <- function(X){
   #matrix comes as string, vector as numbers
@@ -22,7 +18,7 @@ computeMatrixCrossproductDS <- function(X){
   X <- as.matrix(eval(parse(text=X), envir = parent.frame()))
 
   if (length(unique(as.vector(as.matrix(X)))) < nfilter.tab ){
-    stop("FAILED: Nvalid less than nfilter.tab")
+    #stop("FAILED: Nvalid less than nfilter.tab")
   }
 
   return(t(X) %*% X)

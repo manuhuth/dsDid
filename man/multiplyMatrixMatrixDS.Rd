@@ -2,7 +2,7 @@
 % Please edit documentation in R/multiplyMatrixMatrixDS.R
 \name{multiplyMatrixMatrixDS}
 \alias{multiplyMatrixMatrixDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{multiplyMatrixMatrixDS}
 \usage{
 multiplyMatrixMatrixDS(
   matrix1,
@@ -14,17 +14,21 @@ multiplyMatrixMatrixDS(
 )
 }
 \arguments{
-\item{form}{formula in text format}
+\item{matrix1}{A matrix or a string representing a matrix}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{matrix2}{A matrix or a string representing a matrix}
 
-\item{object}{dataframe object name where dependent var values are located}
+\item{nrow1}{The number of rows for the first matrix, used only if the first matrix is not a string}
 
-\item{invlog}{use inverse of logit}
+\item{ncol1}{The number of columns for the first matrix, used only if the first matrix is not a string}
+
+\item{nrow2}{The number of rows for the second matrix, used only if the second matrix is not a string}
+
+\item{ncol2}{The number of columns for the second matrix, used only if the second matrix is not a string}
 }
 \value{
-estimate/prediction using regression coefficients
+A matrix representing the product of the two input matrices
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function multiplies two matrices and returns the product matrix. At least one of the matrices must be from the server-side.
 }

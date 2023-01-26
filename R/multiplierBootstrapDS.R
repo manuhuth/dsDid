@@ -1,11 +1,8 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param form formula in text format
-#' @param coefficients coefficients of dependent variables in form
-#' @param object dataframe object name where dependent var values are located
-#' @param invlog use inverse of logit
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title multiplierBootstrapDS
+#' @description The function performs the multiplier bootstrap on a given matrix and number of iterations, and returns the bootstrapped matrix.
+#' @param matrix A matrix or a string representing a matrix
+#' @param n_iterations A numeric value or a string representing the number of iterations for the bootstrap
+#' @return A matrix that is the result of the multiplier bootstrap
 #' @export
 multiplierBootstrapDS <- function(matrix, n_iterations){
   #matrix comes as string, vector as numbers

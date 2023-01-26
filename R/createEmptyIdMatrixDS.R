@@ -1,11 +1,9 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param form formula in text format
-#' @param coefficients coefficients of dependent variables in form
-#' @param object dataframe object name where dependent var values are located
-#' @param invlog use inverse of logit
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title createEmptyIdMatrixDS
+#' @description The function creates an empty matrix with unique id values as row names and a specified number of columns.
+#' @param df A dataframe or a string representing a dataframe
+#' @param idname A character string representing the column in the dataframe that contains the unique identifier for each observation
+#' @param n_columns A numeric value or a string representing the number of columns in the empty matrix
+#' @return An empty matrix with unique id values as row names and a specified number of columns
 #' @export
 createEmptyIdMatrixDS<- function(df, idname, n_columns){
   #matrix comes as string, vector as numbers

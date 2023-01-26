@@ -2,16 +2,20 @@
 % Please edit documentation in R/enoughIndividualsDS.R
 \name{enoughIndividualsDS}
 \alias{enoughIndividualsDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{enoughIndividualsDS}
 \usage{
 enoughIndividualsDS(df, colname, value)
 }
 \arguments{
-\item{value}{}
+\item{df}{A dataframe or a string representing a dataframe}
+
+\item{colname}{A character string representing the column in the dataframe to check for the specified value}
+
+\item{value}{A value or a string representing the value to check for in the specified column}
 }
 \value{
-estimate/prediction using regression coefficients
+A boolean indicating whether or not there are enough individuals with the specified value in the specified column.
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function checks if there are enough individuals with a specified value in a specified column of a dataframe.
 }

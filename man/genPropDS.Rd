@@ -2,22 +2,24 @@
 % Please edit documentation in R/genPropDS.R
 \name{genPropDS}
 \alias{genPropDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{genPropDS}
 \usage{
 genPropDS(form, coefficents, object, invlog, constant_in_matrix = FALSE)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{form}{A formula in character string format.}
 
-\item{object}{dataframe object name where dependent var values are located}
+\item{object}{An R object that contains the variables in the formula}
 
-\item{invlog}{use inverse of logit}
+\item{invlog}{A logical value indicating whether to apply inverse logit transformation on the estimate}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{constant_in_matrix}{A logical value indicating whether the constant term is included in the coefficient matrix}
+
+\item{coefficients}{A numeric vector of coefficients for the variables in the formula}
 }
 \value{
-estimate/prediction using regression coefficients
+A numeric value representing the estimate of the variable
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function calculates the estimate of a variable based on the given formula, coefficients and object, and returns the numeric value of the variable.
 }

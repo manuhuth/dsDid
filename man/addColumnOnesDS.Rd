@@ -2,22 +2,18 @@
 % Please edit documentation in R/addColumnOnesDS.R
 \name{addColumnOnesDS}
 \alias{addColumnOnesDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{addColumnOnesDS}
 \usage{
 addColumnOnesDS(X, columns)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{X}{A string representing a dataframe}
 
-\item{coefficients}{coefficients of dependent variables in form}
-
-\item{object}{dataframe object name where dependent var values are located}
-
-\item{invlog}{use inverse of logit}
+\item{columns}{A character vector of column names for the new dataframe}
 }
 \value{
-estimate/prediction using regression coefficients
+A dataframe with a column of ones added
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function adds a column of ones to a dataframe and returns the new dataframe.
 }

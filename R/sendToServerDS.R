@@ -11,10 +11,7 @@ sendToServerDS<- function(x){
   #matrix comes as string, vector as numbers
 
   if (!(length(x)==1 & is.numeric(x))){
-
-    if (!(all(x[1] == x))){
       stop("x must be a single number.")
-    }
   }
 
   return(x)

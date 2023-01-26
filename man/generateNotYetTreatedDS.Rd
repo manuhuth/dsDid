@@ -2,22 +2,22 @@
 % Please edit documentation in R/generateNotYetTreatedDS.R
 \name{generateNotYetTreatedDS}
 \alias{generateNotYetTreatedDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{generateNotYetTreatedDS}
 \usage{
 generateNotYetTreatedDS(df, name_variable, t, g)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{df}{A dataframe or a string representing a dataframe}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{name_variable}{A character string representing the column in the dataframe to subset on}
 
-\item{object}{dataframe object name where dependent var values are located}
+\item{t}{An integer representing the minimum period value}
 
-\item{invlog}{use inverse of logit}
+\item{g}{An integer representing the current period}
 }
 \value{
-estimate/prediction using regression coefficients
+A subset of the dataframe with rows that match the specified conditions
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function generates a subset of a dataframe based on a specified variable and value, while only including observations that are from the g period or after, or have never been treated.
 }

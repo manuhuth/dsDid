@@ -2,22 +2,20 @@
 % Please edit documentation in R/createEmptyIdMatrixDS.R
 \name{createEmptyIdMatrixDS}
 \alias{createEmptyIdMatrixDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{createEmptyIdMatrixDS}
 \usage{
 createEmptyIdMatrixDS(df, idname, n_columns)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{df}{A dataframe or a string representing a dataframe}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{idname}{A character string representing the column in the dataframe that contains the unique identifier for each observation}
 
-\item{object}{dataframe object name where dependent var values are located}
-
-\item{invlog}{use inverse of logit}
+\item{n_columns}{A numeric value or a string representing the number of columns in the empty matrix}
 }
 \value{
-estimate/prediction using regression coefficients
+An empty matrix with unique id values as row names and a specified number of columns
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function creates an empty matrix with unique id values as row names and a specified number of columns.
 }

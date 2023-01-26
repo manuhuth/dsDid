@@ -1,10 +1,9 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param df
-#' @param colname
-#' @param value
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title enoughIndividualsDS
+#' @description The function checks if there are enough individuals with a specified value in a specified column of a dataframe.
+#' @param df A dataframe or a string representing a dataframe
+#' @param colname A character string representing the column in the dataframe to check for the specified value
+#' @param value A value or a string representing the value to check for in the specified column
+#' @return A boolean indicating whether or not there are enough individuals with the specified value in the specified column.
 #' @export
 enoughIndividualsDS <- function(df, colname, value){
   #############################################################

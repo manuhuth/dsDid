@@ -2,22 +2,22 @@
 % Please edit documentation in R/clusterInfluenceFunctionDS.R
 \name{clusterInfluenceFunctionDS}
 \alias{clusterInfluenceFunctionDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{clusterInfluenceFunctionDS}
 \usage{
 clusterInfluenceFunctionDS(df, influence_matrix, clustervars, idname)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{df}{A string representing a dataframe}
 
-\item{coefficients}{coefficients of dependent variables in form}
+\item{influence_matrix}{A matrix of influence values}
 
-\item{object}{dataframe object name where dependent var values are located}
+\item{clustervars}{A character string or vector of strings representing the column(s) in the dataframe that define the clusters}
 
-\item{invlog}{use inverse of logit}
+\item{idname}{A character string representing the column in the dataframe that contains the unique identifier for each observation}
 }
 \value{
-estimate/prediction using regression coefficients
+A vector of mean influence values for each cluster
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function calculates the mean influence for each cluster in a dataframe and returns the values.
 }

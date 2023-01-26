@@ -2,22 +2,18 @@
 % Please edit documentation in R/multiplierBootstrapDS.R
 \name{multiplierBootstrapDS}
 \alias{multiplierBootstrapDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{multiplierBootstrapDS}
 \usage{
 multiplierBootstrapDS(matrix, n_iterations)
 }
 \arguments{
-\item{form}{formula in text format}
+\item{matrix}{A matrix or a string representing a matrix}
 
-\item{coefficients}{coefficients of dependent variables in form}
-
-\item{object}{dataframe object name where dependent var values are located}
-
-\item{invlog}{use inverse of logit}
+\item{n_iterations}{A numeric value or a string representing the number of iterations for the bootstrap}
 }
 \value{
-estimate/prediction using regression coefficients
+A matrix that is the result of the multiplier bootstrap
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function performs the multiplier bootstrap on a given matrix and number of iterations, and returns the bootstrapped matrix.
 }

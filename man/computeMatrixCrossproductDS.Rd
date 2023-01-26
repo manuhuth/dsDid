@@ -2,22 +2,16 @@
 % Please edit documentation in R/computeMatrixCrossproductDS.R
 \name{computeMatrixCrossproductDS}
 \alias{computeMatrixCrossproductDS}
-\title{assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)}
+\title{computeMatrixCrossproductDS}
 \usage{
 computeMatrixCrossproductDS(X)
 }
 \arguments{
-\item{form}{formula in text format}
-
-\item{coefficients}{coefficients of dependent variables in form}
-
-\item{object}{dataframe object name where dependent var values are located}
-
-\item{invlog}{use inverse of logit}
+\item{X}{A string representing a matrix}
 }
 \value{
-estimate/prediction using regression coefficients
+A matrix representing the cross-product of the input matrix
 }
 \description{
-assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
+The function computes the cross-product of a matrix and returns the result.
 }

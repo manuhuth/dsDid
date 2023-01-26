@@ -1,11 +1,10 @@
-#' assign function -- provide estimate of found coefficients (typically from federated RDataShield GLM function)
-#'
-#' @param form formula in text format
-#' @param coefficients coefficients of dependent variables in form
-#' @param object dataframe object name where dependent var values are located
-#' @param invlog use inverse of logit
-#'
-#' @return estimate/prediction using regression coefficients
+#' @title clusterInfluenceFunctionDS
+#' @description The function calculates the mean influence for each cluster in a dataframe and returns the values.
+#' @param df A string representing a dataframe
+#' @param influence_matrix A matrix of influence values
+#' @param clustervars A character string or vector of strings representing the column(s) in the dataframe that define the clusters
+#' @param idname A character string representing the column in the dataframe that contains the unique identifier for each observation
+#' @return A vector of mean influence values for each cluster
 #' @export
 clusterInfluenceFunctionDS <- function(df, influence_matrix, clustervars, idname){
   #############################################################
@@ -17,13 +16,11 @@ clusterInfluenceFunctionDS <- function(df, influence_matrix, clustervars, idname
   #nfilter.string <- as.numeric(thr$nfilter.string)
   #############################################################
 
-  if (is.character(df)){
-    df <- as.matrix(eval(parse(text=df), envir = parent.frame()))
-  }
+  df <- as.matrix(eval(parse(text=df), envir = parent.frame()))
 
-  if (is.character(influence_matrix)){
-    influence_matrix <- as.matrix(eval(parse(text=influence_matrix), envir = parent.frame()))
-  }
+
+  influence_matrix <- as.matrix(eval(parse(text=influence_matrix), envir = parent.frame()))
+
 
   if (nrow(df) < 5) {
     stop("FAILED: Nvalid less than nfilter.tab")
