@@ -12,4 +12,5 @@ AssignMethods:
    generateNotYetTreatedDS,
    createEmptyIdMatrixDS,
    AppendInfluenceDS,
-   clusterInfluenceFunctionDS
+   clusterInfluenceFunctionDS,
+   computeOddsDS
