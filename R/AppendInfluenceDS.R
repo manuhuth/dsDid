@@ -7,7 +7,7 @@
 #' @param column A character string representing the name of the column to append the influence values to
 #' @return A dataframe with the column of influence values added
 #' @export
-AppendInfluenceDS <- function(seed, df, influences, id_period_vector, column){
+AppendInfluenceDS <- function(df, influences, id_period_vector, column){
 
   df <- eval(parse(text=df), envir = parent.frame())
 
