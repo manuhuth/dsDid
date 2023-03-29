@@ -6,7 +6,6 @@
 #' @param invlog A logical value indicating whether to apply inverse logit transformation on the estimate
 #' @param constant_in_matrix A logical value indicating whether the constant term is included in the coefficient matrix
 #' @return A numeric value representing the estimate of the variable
-#' @examples
 #' @export
 genPropDS <- function(form, coefficents, object, invlog, constant_in_matrix = FALSE){
 

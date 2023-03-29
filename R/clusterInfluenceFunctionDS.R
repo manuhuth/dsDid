@@ -9,7 +9,7 @@
 clusterInfluenceFunctionDS <- function(df, influence_matrix, clustervars, idname){
   #############################################################
   # MODULE 1: CAPTURE THE nfilter SETTINGS
-  thr <- listDisclosureSettingsDS()
+  thr <- dsBase::listDisclosureSettingsDS()
   nfilter.tab <- as.numeric(thr$nfilter.tab)
   #nfilter.glm <- as.numeric(thr$nfilter.glm)
   #nfilter.subset <- as.numeric(thr$nfilter.subset)
@@ -28,7 +28,7 @@ clusterInfluenceFunctionDS <- function(df, influence_matrix, clustervars, idname
 
   number_of_clusters <- length(unique(df[, clustervars]))
   cluster <- unlist(unique(df[, c(idname, clustervars)])[,2])
-  cluster_n <- aggregate(cluster, by=list(cluster), length)[,2]
+  cluster_n <- stats::aggregate(cluster, by=list(cluster), length)[,2]
 
 
   cluster_means <- rowsum(influence_matrix, unlist(cluster), reorder=TRUE) / cluster_n

@@ -13,4 +13,5 @@ AssignMethods:
    createEmptyIdMatrixDS,
    AppendInfluenceDS,
    clusterInfluenceFunctionDS,
-   computeOddsDS
+   computeOddsDS,
+   recodeDS

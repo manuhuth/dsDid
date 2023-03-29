@@ -4,11 +4,9 @@
 \alias{AppendInfluenceDS}
 \title{AppendInfluenceDS}
 \usage{
-AppendInfluenceDS(seed, df, influences, id_period_vector, column)
+AppendInfluenceDS(df, influences, id_period_vector, column)
 }
 \arguments{
-\item{seed}{A seed used for random sampling}
-
 \item{df}{A string representing a dataframe}
 
 \item{influences}{A vector of influence values}
@@ -16,6 +14,8 @@ AppendInfluenceDS(seed, df, influences, id_period_vector, column)
 \item{id_period_vector}{A vector of row names or a string representing a vector of row names}
 
 \item{column}{A character string representing the name of the column to append the influence values to}
+
+\item{seed}{A seed used for random sampling}
 }
 \value{
 A dataframe with the column of influence values added
