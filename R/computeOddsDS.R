@@ -6,14 +6,13 @@
 #' @return: A vector of odds computed from the propensities and the binary outcome
 #'
 #' @export
-computeOddsDS <- function(name_propensities, name_dummy_g){
-  #matrix comes as string, vector as numbers
+computeOddsDS <- function(name_propensities, name_dummy_g) {
+  # matrix comes as string, vector as numbers
 
-  dummy_G <- eval(parse(text=name_dummy_g), envir = parent.frame())
-  propensities <- eval(parse(text=name_propensities), envir = parent.frame())
+  dummy_G <- eval(parse(text = name_dummy_g), envir = parent.frame())
+  propensities <- eval(parse(text = name_propensities), envir = parent.frame())
   C <- 1 - dummy_G
   odds <- C * propensities / (1 - propensities)
 
   return(odds)
-
 }

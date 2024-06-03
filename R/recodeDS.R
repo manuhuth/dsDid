@@ -5,13 +5,11 @@
 #' @param replace Entry to be replaced
 #' @return The recoded vector
 #' @export
-recodeDS <- function(x, replace_with, replace){
+recodeDS <- function(x, replace_with, replace) {
+  x <- eval(parse(text = x), envir = parent.frame())
 
-  x <- eval(parse(text=x), envir = parent.frame())
-
-  #form <- eval(parse(text=form), envir = parent.frame())
-  x[ x == replace] <- replace_with
+  # form <- eval(parse(text=form), envir = parent.frame())
+  x[x == replace] <- replace_with
 
   return(x)
-
 }

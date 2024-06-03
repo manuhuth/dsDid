@@ -7,34 +7,32 @@
 #' @param constant_in_matrix A logical value indicating whether the constant term is included in the coefficient matrix
 #' @return A numeric value representing the estimate of the variable
 #' @export
-genPropDS <- function(form, coefficents, object, invlog, constant_in_matrix = FALSE){
-
-  #form <- eval(parse(text=form), envir = parent.frame())
+genPropDS <- function(form, coefficents, object, invlog, constant_in_matrix = FALSE) {
+  # form <- eval(parse(text=form), envir = parent.frame())
   form.vars <- all.vars(formula(form))
-  object <- eval(parse(text=object), envir = parent.frame())
+  object <- eval(parse(text = object), envir = parent.frame())
 
 
   estimate <- object[form.vars[1]]
-  estimate[,] <- coefficents[1]
+  estimate[, ] <- coefficents[1]
   colnames(estimate) <- "distance"
 
-  if (!constant_in_matrix){
-    for (i in 2:length(form.vars)){
+  if (!constant_in_matrix) {
+    for (i in 2:length(form.vars)) {
       estimate <- estimate + object[form.vars[i]] * coefficents[i]
     }
-  } else{
-    for (i in 3:length(form.vars)){
-      estimate <- estimate + object[form.vars[i]] * coefficents[i-1]
+  } else {
+    for (i in 3:length(form.vars)) {
+      estimate <- estimate + object[form.vars[i]] * coefficents[i - 1]
     }
   }
 
 
   # inverse logit
-  if (invlog){
+  if (invlog) {
     estimate <- 1 / (1 + exp(-estimate))
     # estimate <- invlogit(estimate)
   }
 
   return(as.numeric(estimate[["distance"]]))
-
 }

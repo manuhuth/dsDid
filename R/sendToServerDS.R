@@ -7,11 +7,11 @@
 #'
 #' @return estimate/prediction using regression coefficients
 #' @export
-sendToServerDS<- function(x){
-  #matrix comes as string, vector as numbers
+sendToServerDS <- function(x) {
+  # matrix comes as string, vector as numbers
 
-  if (!(length(x)==1 & is.numeric(x))){
-      stop("x must be a single number.")
+  if (!(length(x) == 1 & is.numeric(x))) {
+    stop("x must be a single number.")
   }
 
   return(x)

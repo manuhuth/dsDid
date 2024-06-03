@@ -7,21 +7,20 @@
 #' @param column A character string representing the name of the column to append the influence values to
 #' @return A dataframe with the column of influence values added
 #' @export
-AppendInfluenceDS <- function(df, influences, id_period_vector, column){
+AppendInfluenceDS <- function(df, influences, id_period_vector, column) {
+  df <- eval(parse(text = df), envir = parent.frame())
 
-  df <- eval(parse(text=df), envir = parent.frame())
 
-
-  influences <- eval(parse(text=influences), envir = parent.frame())
+  influences <- eval(parse(text = influences), envir = parent.frame())
 
 
   #############################################################
   # MODULE 1: CAPTURE THE nfilter SETTINGS
   thr <- dsBase::listDisclosureSettingsDS()
   nfilter.tab <- as.numeric(thr$nfilter.tab)
-  #nfilter.glm <- as.numeric(thr$nfilter.glm)
-  #nfilter.subset <- as.numeric(thr$nfilter.subset)
-  #nfilter.string <- as.numeric(thr$nfilter.string)
+  # nfilter.glm <- as.numeric(thr$nfilter.glm)
+  # nfilter.subset <- as.numeric(thr$nfilter.subset)
+  # nfilter.string <- as.numeric(thr$nfilter.string)
   #############################################################
 
 
@@ -30,12 +29,12 @@ AppendInfluenceDS <- function(df, influences, id_period_vector, column){
   }
 
 
-  if (is.character(id_period_vector)){
-    id_period_vector <- eval(parse(text=id_period_vector), envir = parent.frame())
+  if (is.character(id_period_vector)) {
+    id_period_vector <- eval(parse(text = id_period_vector), envir = parent.frame())
   }
 
-  if (is.character(column)){
-    column <- eval(parse(text=column), envir = parent.frame())
+  if (is.character(column)) {
+    column <- eval(parse(text = column), envir = parent.frame())
   }
 
 
@@ -43,9 +42,9 @@ AppendInfluenceDS <- function(df, influences, id_period_vector, column){
 
   id_period_vector <- sort(id_period_vector)
 
-  df[which( rownames(df) %in% id_period_vector), column] <- influences
+  df[which(rownames(df) %in% id_period_vector), column] <- influences
 
 
-  return(df[sample(nrow(df)),])
-  #return(df)
+  return(df[sample(nrow(df)), ])
+  # return(df)
 }

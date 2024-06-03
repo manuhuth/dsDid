@@ -7,9 +7,9 @@
 #'
 #' @return estimate/prediction using regression coefficients
 #' @export
-buildHelperDS <- function(x){
-  #matrix comes as string, vector as numbers
+buildHelperDS <- function(x) {
+  # matrix comes as string, vector as numbers
 
-  x <- eval(parse(text=x), envir = parent.frame())
+  x <- eval(parse(text = x), envir = parent.frame())
   return(x)
 }

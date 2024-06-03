@@ -5,14 +5,14 @@
 #' @param n_columns A numeric value or a string representing the number of columns in the empty matrix
 #' @return An empty matrix with unique id values as row names and a specified number of columns
 #' @export
-createEmptyIdMatrixDS<- function(df, idname, n_columns){
-  #matrix comes as string, vector as numbers
-  if (is.character(df)){
-    df <- eval(parse(text=df), envir = parent.frame())
+createEmptyIdMatrixDS <- function(df, idname, n_columns) {
+  # matrix comes as string, vector as numbers
+  if (is.character(df)) {
+    df <- eval(parse(text = df), envir = parent.frame())
   }
 
-  if (is.character(n_columns)){
-    n_columns <- eval(parse(text=n_columns), envir = parent.frame())
+  if (is.character(n_columns)) {
+    n_columns <- eval(parse(text = n_columns), envir = parent.frame())
   }
 
   ids <- unique(df[, idname])
