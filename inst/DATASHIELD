@@ -1,6 +1,5 @@
 AggregateMethods:
    computeMatrixCrossproductDS,
-   buildHelperDS,
    multiplierBootstrapDS,
    enoughIndividualsDS
 AssignMethods:
